@@ -1,0 +1,38 @@
+import search from "../pages";
+
+
+fixture`Sauce Demo`
+  .page`https://google.com`;
+test('Sauce Demo Validation', async t => {
+    const firstname = Math.random().toString(36).substring(2,7);
+    const zipcode = Math.random().toString(36).slice(2, 7);
+
+
+  await t
+
+    .typeText(search.searchInput, "https://www.saucedemo.com")
+    .pressKey('enter')
+    .click(search.searchResult)
+
+    .typeText(search.searchUsername,"performance_glitch_user")
+    .typeText(search.searchPassword,"secret_sauce")
+    .click(search.searchLogin)
+
+    .expect((search.searchPageHeader).innerText).eql('PRODUCTS')
+    .expect((search.searchproductName).innerText).eql('Sauce Labs Fleece Jacket')
+
+    .click(search.searchSelectProduct1)
+    .click(search.searchSelectProduct2)
+    .click(search.searchClickCart)
+
+    .expect((search.searchVerifyProduct1).innerText).eql('Sauce Labs Backpack')
+    .expect((search.searchVerifyProduct2).innerText).eql('Sauce Labs Fleece Jacket')
+    .click(search.searchCheckout)
+
+    .typeText(search.searchFillFirstName,firstname)
+    .typeText(search.searchFillLastName,"123")
+    .typeText(search.searchFillZipCode,zipcode)
+    .click(search.searchClickContinue)
+
+    .click(search.searchClickFinish)
+});

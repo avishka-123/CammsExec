@@ -1,0 +1,14 @@
+import { Selector } from 'testcafe';
+
+class NavigateLogin{
+    get searchInput() {return Selector("input[title='Search']")}
+    get searchResult(){return Selector("h3").withText('Swag Labs')}
+
+    }
+
+    class LoginIn{
+    get searchUsername() {return Selector("input[name='user-name']").withText("performance_glitch_user")}
+    get searchPassword() {return Selector("input[name='password']").withText("secret_sauce")}
+    get searchLogin() {return Selector("input[name='login-button']")}
+
+    }

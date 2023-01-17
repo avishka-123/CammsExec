@@ -1,0 +1,21 @@
+import { Selector } from 'testcafe';
+class Products{
+    get searchPageHeader() {return Selector("span[class='title']")}
+    get searchproductName() {return Selector("a[id='item_5_title_link']")}
+
+    get searchSelectProduct1() {return Selector("button[name='add-to-cart-sauce-labs-fleece-jacket']")}
+    get searchSelectProduct2() {return Selector("button[name='add-to-cart-sauce-labs-backpack']")}
+    get searchClickCart() {return Selector("a[class='shopping_cart_link']")}
+
+
+    get searchVerifyProduct1() {return Selector("a[id='item_4_title_link']")}
+    get searchVerifyProduct2() {return Selector("a[id='item_5_title_link']")}
+    get searchCheckout() {return Selector("button[id='checkout']")}
+
+    get searchFillFirstName() {return Selector("input[name='firstName']")}
+    get searchFillLastName() {return Selector("input[name='lastName']")}
+    get searchFillZipCode() {return Selector("input[name='postalCode']")}
+    get searchClickContinue() {return Selector("input[name='continue']")}
+
+    get searchClickFinish() {return Selector("button[name='finish']")}
+    }
